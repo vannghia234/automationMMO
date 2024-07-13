@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Nguyễn Văn A",
+        "cccd": "032324232323",
+        "address": "Quang Trung",
+        "area": "HCM"
+    },
+     {
+        "name": "Nguyễn thị b",
+        "cccd": "22222222222222",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    },
+    {
+        "name": "Nguyễn Kiên",
+        "cccd": "111111111111111111111",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    },
+     {
+        "name": "Nguyễn Kiên",
+        "cccd": "111111111111111111111",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    },
+     {
+        "name": "Nguyễn Kiên",
+        "cccd": "111111111111111111111",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    },
+     {
+        "name": "Nguyễn Kiên",
+        "cccd": "111111111111111111111",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    },
+     {
+        "name": "Nguyễn Kiên",
+        "cccd": "111111111111111111111",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    },
+     {
+        "name": "Nguyễn Kiên",
+        "cccd": "111111111111111111111",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    },
+     {
+        "name": "Nguyễn Kiên",
+        "cccd": "111111111111111111111",
+        "address": "Gò Vấp",
+        "area" : "HCM"
+    }
+]
