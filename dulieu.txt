@@ -1,56 +1,41 @@
 [
     {
-        "name": "Nguyễn Văn A",
-        "cccd": "032324232323",
+        "name": "Nguyễn Văn Chương",
+        "cccd": "045201000283",
         "address": "Quang Trung",
-        "area": "HCM"
-    },
-     {
-        "name": "Nguyễn thị b",
-        "cccd": "22222222222222",
-        "address": "Gò Vấp",
-        "area" : "HCM"
+        "area": "HCM",
+        "method": "CK"
     },
     {
-        "name": "Nguyễn Kiên",
-        "cccd": "111111111111111111111",
-        "address": "Gò Vấp",
-        "area" : "HCM"
+        "name": "Lai Nghiệp Sơ",
+        "cccd": "056070000124",
+        "address": "Quang Trung",
+        "area": "HCM",
+        "method": "CK"
+
     },
      {
-        "name": "Nguyễn Kiên",
-        "cccd": "111111111111111111111",
-        "address": "Gò Vấp",
-        "area" : "HCM"
+        "name": "Cao Anh Kiệt",
+        "cccd": "079092035339",
+        "address": "Quang Trung",
+        "area": "HCM",
+        "method": "CK"
+
     },
      {
-        "name": "Nguyễn Kiên",
-        "cccd": "111111111111111111111",
-        "address": "Gò Vấp",
-        "area" : "HCM"
+        "name": "Nguyễn Thị Kim Thi",
+        "cccd": "079196031772",
+        "address": "Quang Trung",
+        "area": "HCM",
+        "method": "CK"
+
     },
+    ,
      {
-        "name": "Nguyễn Kiên",
-        "cccd": "111111111111111111111",
-        "address": "Gò Vấp",
-        "area" : "HCM"
-    },
-     {
-        "name": "Nguyễn Kiên",
-        "cccd": "111111111111111111111",
-        "address": "Gò Vấp",
-        "area" : "HCM"
-    },
-     {
-        "name": "Nguyễn Kiên",
-        "cccd": "111111111111111111111",
-        "address": "Gò Vấp",
-        "area" : "HCM"
-    },
-     {
-        "name": "Nguyễn Kiên",
-        "cccd": "111111111111111111111",
-        "address": "Gò Vấp",
-        "area" : "HCM"
+        "name": "Nguyễn thị thu huyền",
+        "cccd": "033184017037",
+        "address": "Quang Trung",
+        "area": "HCM",
+        "method": "CK"
     }
 ]
