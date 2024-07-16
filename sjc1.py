@@ -29,22 +29,21 @@ drivers = []
 # extension_path1 = r"Free-VPN-for-Chrome-by-1clickVPN-Chrome-Web-Store.crx"
 extension_path2 = r"I-m-not-robot-captcha-clicker-Chrome-Web-Store.crx"
 extension_path3 = r"rektCaptcha-reCaptcha-Solver-Chrome-Web-Store.crx"
-# extension_path1 = r"Buster-Captcha-Solver-for-Humans-Chrome-Web-Store.crx"
 
 for options in chrome_options:
     options.page_load_strategy = (
         "normal"  # Đảm bảo không bỏ qua bất kỳ bước tải trang nào
     )
-    options.add_argument("--disable-popup-blocking")
-    options.add_extension(extension_path3)
-    # options.add_extension(extension_path2)
+    # options.add_argument("--disable-popup-blocking")
     # options.add_extension(extension_path1)
+    # options.add_extension(extension_path2)
+    options.add_extension(extension_path3)
     options.add_argument("--disable-infobars")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-gpu")
     options.add_experimental_option("detach", True)
-    options.add_argument("--window-size=450,350")
+    options.add_argument("--window-size=450,̀500")
     driver = webdriver.Chrome(service=service, options=options)
     drivers.append(driver)
 
@@ -52,37 +51,10 @@ for options in chrome_options:
 def loop_click(driver, data):
     wait = WebDriverWait(driver, 10)
     try:
-        iframe = driver.find_element(
-            By.XPATH,
-            '//*[@id="g-recaptcha"]/div/div/iframe',
-        )
-        driver.switch_to.frame(iframe)
-
-        driver.find_element(By.CLASS_NAME, "recaptcha-checkbox-border").click()
-        driver.implicitly_wait(5)
-
-        # Switch back to the default content
-        driver.switch_to.default_content()
-        driver.get_screenshot_as_file("8.png")
-        # switch the  recaptcha challenge iframe
-        iframe = driver.find_element(
-            By.XPATH, '//*[@id="kt_app_body"]/div[2]/div[4]/iframe'
-        )
-        driver.switch_to.frame(iframe)
-
-        # click to the buster extension button icon on iframe recaptcha challange
-        driver.find_element(
-            By.XPATH, '//*[@id="rc-imageselect"]/div[3]/div[2]/div[1]/div[1]/div[4]'
-        ).click()
-        time.sleep(1)
-        driver.get_screenshot_as_file("9.png")
-        # Switch back to the default content
-        driver.switch_to.default_content()
-        time.sleep(8)
         submit_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.ID, "register_form_submit"))
         )
-        time.sleep(13)
+        time.sleep(9)
         # driver.execute_script("arguments[0].click();", submit_button)
         submit_button.click()
         confirm_button = wait.until(
@@ -132,17 +104,10 @@ def handle_booking(driver, data):
         time.sleep(0.5)
 
         # chọn điểm giao dịch option
-        if data["address"].lower() == "gò vấp":
+        if data["address"].lower() == "quang trung":
             choose_trans = wait.until(
                 EC.presence_of_element_located(
                     (By.XPATH, "/html/body/span/span/span[2]/ul/li[2]")
-                )
-            )
-            choose_trans.click()
-        elif data["address"].lower() == "trụ sở":
-            choose_trans = wait.until(
-                EC.presence_of_element_located(
-                    (By.XPATH, "/html/body/span/span/span[2]/ul/li[1]")
                 )
             )
             choose_trans.click()
@@ -189,13 +154,9 @@ def handle_booking(driver, data):
             time.sleep(0.5)
             choosen_method.click()
 
-        # iframe = driver.find_element(By.CSS_SELECTOR, 'iframe[src*="google.com/recaptcha"]')
-
+        time.sleep(1)
         loop_click(driver, data)
     except Exception as e:
-        print(
-            f"Please wait, the auto process is being executed and will end when you have successfully booked tickets at SJC."
-        )
         handle_booking(driver, data)
 
 
