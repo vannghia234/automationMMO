@@ -5,51 +5,6 @@
         "address": "trụ sở",
         "area": "HCM",
         "method": "CK"
-    },
-     {
-        "name": "Nguyễn Thị Kim Thi",
-        "cccd": "079196031772",
-        "address": "trụ sở",
-        "area": "HCM",
-        "method": "CK"
-
-    },
-     {
-        "name": "Nguyễn thị thu huyền",
-        "cccd": "033184017037",
-        "address": "quang trung",
-        "area": "HCM",
-        "method": "CK"
-    },
-     {
-        "name": "Thập Bình Phương",
-        "cccd": "058201000789",
-        "address": "quang trung",
-        "area": "HCM",
-        "method": "CK"
-    }
-    ,
-     {
-        "name": "Lê Hoàng Việt Long",
-        "cccd": "074202000537",
-        "address": "quang trung",
-        "area": "HCM",
-        "method": "CK"
-    }
-    ,
-     {
-        "name": "Nguyễn Anh Khoa",
-        "cccd": "082201014249",
-        "address": "quang trung",
-        "area": "HCM",
-        "method": "CK"
-    },
-     {
-        "name": "Huỳnh Võ Thành Luân",
-        "cccd": "079201012962",
-        "address": "quang trung",
-        "area": "HCM",
-        "method": "CK"
     }
 
 ]

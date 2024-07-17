@@ -1,0 +1,55 @@
+[
+{
+        "name": "Nguyễn Văn Chương",
+        "cccd": "045201000283",
+        "address": "trụ sở",
+        "area": "HCM",
+        "method": "CK"
+    },
+     {
+        "name": "Nguyễn Thị Kim Thi",
+        "cccd": "079196031772",
+        "address": "trụ sở",
+        "area": "HCM",
+        "method": "CK"
+
+    },
+     {
+        "name": "Nguyễn Tú Quỳnh",
+        "cccd": "079303000369",
+        "address": "quang trung",
+        "area": "HCM",
+        "method": "TM"
+    },
+     {
+        "name": "Thập Bình Phương",
+        "cccd": "058201000789",
+        "address": "trụ sở",
+        "area": "HCM",
+        "method": "CK"
+    }
+    ,
+     {
+        "name": "Lê Hoàng Việt Long",
+        "cccd": "074202000537",
+        "address": "trụ sở",
+        "area": "HCM",
+        "method": "CK"
+    }
+    ,
+     {
+        "name": "Nguyễn Anh Khoa",
+        "cccd": "082201014249",
+        "address": "trụ sở",
+        "area": "HCM",
+        "method": "CK"
+    },
+     {
+        "name": "Huỳnh Võ Thành Luân",
+        "cccd": "079201012962",
+        "address": "trụ sở",
+        "area": "HCM",
+        "method": "TM"
+    }
+
+]

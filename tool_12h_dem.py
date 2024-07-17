@@ -33,12 +33,10 @@ extension_path2 = r"I-m-not-robot-captcha-clicker-Chrome-Web-Store.crx"
 extension_path3 = r"rektCaptcha-reCaptcha-Solver-Chrome-Web-Store.crx"
 
 for options in chrome_options:
-    options.page_load_strategy = (
-        "normal"  # Đảm bảo không bỏ qua bất kỳ bước tải trang nào
-    )
+    options.page_load_strategy = "normal"
     # options.add_argument("--disable-popup-blocking")
     # options.add_extension(extension_path1)
-    options.add_extension(extension_path2)
+    # options.add_extension(extension_path2)
     options.add_extension(extension_path3)
     options.add_argument("--disable-infobars")
     options.add_argument("--disable-dev-shm-usage")
@@ -51,19 +49,30 @@ for options in chrome_options:
 
 
 def loop_click(driver, data):
-    wait = WebDriverWait(driver, 10)
+    wait = WebDriverWait(driver, 5)
+
     try:
         while True:
             current_time = datetime.now().strftime("%H:%M:%S")
             end_time = "00:02:00"
+            # Check if captcha has timed out and refresh
+            # if elapsed_time > refresh_threshold:
+            #     driver.refresh()
+            #     time.sleep(1)
+            #     handle_booking(driver, data)
+            # break
             if current_time == "00:00:00":
                 break
             elif current_time > "00:00:00" and current_time < end_time:
                 break
-            time.sleep(0.001)
-
-        submit_button = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.ID, "register_form_submit"))
+            if current_time == "11:59:00":
+                driver.refresh()
+                time.sleep(1)
+                handle_booking(driver, data)
+                break
+            # time.sleep(0.00001)
+        submit_button = WebDriverWait(driver, 3).until(
+            EC.visibility_of_element_located((By.ID, "register_form_submit"))
         )
         submit_button.click()
         confirm_button = wait.until(
@@ -157,7 +166,7 @@ def handle_booking(driver, data):
         )
         payment_method.click()
         time.sleep(0.1)
-        if data["method"].lower() == "CK":
+        if data["method"].lower() == "ck":
             choosen_method = driver.find_element(
                 By.XPATH, "/html/body/span/span/span[2]/ul/li[1]"
             )
@@ -169,7 +178,7 @@ def handle_booking(driver, data):
             )
             time.sleep(0.1)
             choosen_method.click()
-
+        time.sleep(1)
         loop_click(driver, data)
     except Exception as e:
         handle_booking(driver, data)

@@ -49,9 +49,9 @@ for options in chrome_options:
 
 
 def loop_click(driver, data):
-    wait = WebDriverWait(driver, 10)
+    wait = WebDriverWait(driver, 5)
     try:
-        submit_button = WebDriverWait(driver, 10).until(
+        submit_button = WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable((By.ID, "register_form_submit"))
         )
         time.sleep(9)
@@ -76,7 +76,7 @@ def loop_click(driver, data):
 
 def handle_booking(driver, data):
     try:
-        wait = WebDriverWait(driver, 15)
+        wait = WebDriverWait(driver, 10)
 
         # button chọn vùng
         religon_point = wait.until(
@@ -104,10 +104,17 @@ def handle_booking(driver, data):
         time.sleep(0.5)
 
         # chọn điểm giao dịch option
-        if data["address"].lower() == "quang trung":
+        if data["address"].lower() == "gò vấp":
             choose_trans = wait.until(
                 EC.presence_of_element_located(
                     (By.XPATH, "/html/body/span/span/span[2]/ul/li[2]")
+                )
+            )
+            choose_trans.click()
+        elif data["address"].lower() == "trụ sở":
+            choose_trans = wait.until(
+                EC.presence_of_element_located(
+                    (By.XPATH, "/html/body/span/span/span[2]/ul/li[1]")
                 )
             )
             choose_trans.click()
