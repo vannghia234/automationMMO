@@ -49,12 +49,12 @@ for options in chrome_options:
 
 
 def loop_click(driver, data):
-    wait = WebDriverWait(driver, 5)
+    wait = WebDriverWait(driver, 9)
     try:
         submit_button = WebDriverWait(driver, 5).until(
             EC.element_to_be_clickable((By.ID, "register_form_submit"))
         )
-        time.sleep(9)
+        time.sleep(1)
         # driver.execute_script("arguments[0].click();", submit_button)
         submit_button.click()
         time.sleep(1)
@@ -116,6 +116,13 @@ def handle_booking(driver, data):
             choose_trans = wait.until(
                 EC.presence_of_element_located(
                     (By.XPATH, "/html/body/span/span/span[2]/ul/li[1]")
+                )
+            )
+            choose_trans.click()
+        elif data["address"].lower() == "minh khai":
+            choose_trans = wait.until(
+                EC.presence_of_element_located(
+                    (By.XPATH, "/html/body/span/span/span[2]/ul/li[4]")
                 )
             )
             choose_trans.click()

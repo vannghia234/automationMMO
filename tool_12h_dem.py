@@ -136,6 +136,13 @@ def handle_booking(driver, data):
                 )
             )
             choose_trans.click()
+        elif data["address"].lower() == "minh khai":
+            choose_trans = wait.until(
+                EC.presence_of_element_located(
+                    (By.XPATH, "/html/body/span/span/span[2]/ul/li[4]")
+                )
+            )
+            choose_trans.click()
         else:
             choose_trans = wait.until(
                 EC.presence_of_element_located(
