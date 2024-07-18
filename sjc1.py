@@ -57,6 +57,7 @@ def loop_click(driver, data):
         time.sleep(9)
         # driver.execute_script("arguments[0].click();", submit_button)
         submit_button.click()
+        time.sleep(1)
         confirm_button = wait.until(
             EC.presence_of_element_located(
                 (

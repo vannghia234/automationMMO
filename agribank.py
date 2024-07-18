@@ -17,10 +17,6 @@ for options in chrome_options:
     options.page_load_strategy = (
         "normal"  # Đảm bảo không bỏ qua bất kỳ bước tải trang nào
     )
-    options.add_argument("--disable-infobars")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-gpu")
     options.add_experimental_option("detach", True)
     options.add_argument("--window-size=450,̀500")
     driver = webdriver.Chrome(service=service, options=options)
@@ -30,20 +26,23 @@ for options in chrome_options:
 def automate_user(driver):
     try:
         driver.get("https://bookingonline.agribank.com.vn/muavangSJCtructuyen")
-        wait = WebDriverWait(driver, 5)
+        # wait = WebDriverWait(driver, 5)
 
         # name_input = wait.until(EC.presence_of_element_located((By.ID, "id_cccd")))
-        login_button = driver.find_element(By.XPATH, '//*[@id="list-item-95-1"]')
-        login_button.click()
+        diemGiaoDich = driver.find_element(By.XPATH, r"//input[@id='input-25']")
+        diemGiaoDich.click()
 
-        login_button = driver.find_element(By.XPATH, '//input[@id="input-52"]')
+        login_button = driver.find_element(
+            By.CSS_SELECTOR,
+            "body > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1)",
+        )
         driver.execute_script("arguments[0].click();", login_button)
+        driver.find_element(By.XPATH, r"//button[contains(text(),'Tiếp tục')]").click()
 
         # handle_booking(driver, data)
 
     except Exception as e:
         print(f"Starting")
-        driver.refresh()
 
 
 threading.Thread(
